@@ -5,9 +5,14 @@ class ClickStore {
 
     constructor() {
         makeAutoObservable(this)
+        setInterval(() => this.increase(), 1000)
     }
 
     log(){
+        this.count = 0
+    }
+
+    increase(){
         this.count += 1
     }
 }
