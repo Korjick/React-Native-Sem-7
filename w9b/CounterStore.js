@@ -1,23 +1,26 @@
 import {makeAutoObservable} from "mobx";
 
-class CounterStore {
+export default class CounterStore {
     count = 0
+    logger = null
 
-    constructor() {
+    constructor(logger) {
         makeAutoObservable(this)
+        this.logger = logger
     }
 
     increment() {
         this.count += 1
+        this.logger.log()
     }
 
     decrement() {
         this.count -= 1
+        this.logger.log()
     }
 
     reset() {
         this.count = 0
+        this.logger.log()
     }
 }
-
-export default new CounterStore()

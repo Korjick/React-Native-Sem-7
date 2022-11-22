@@ -7,7 +7,7 @@ class ClickStore {
         makeAutoObservable(this)
     }
 
-    increment() {
+    log(){
         this.count += 1
     }
 }
